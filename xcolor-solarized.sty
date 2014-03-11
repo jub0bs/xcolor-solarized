@@ -1,0 +1,43 @@
+% --- Package identification ---
+\NeedsTeXFormat{LaTeX2e}[2011/06/27]
+\ProvidesPackage{xcolor-solarized}%
+ [2014/03/17 v0.1 xcolor definitions for Ethan Schoonover's Solarized theme]
+
+% --- Discard any option passed to the package ---
+\DeclareOption*%
+{%
+  \OptionNotUsed
+  \PackageWarning{xcolor-solarized}{Unknown `\CurrentOption' option}
+}  
+
+% --- Process options ---
+\ProcessOptions\relax
+
+% --- Package dependencies ---
+\RequirePackage{xcolor}[2007/01/21]
+
+% --- prefix ---
+\newcommand\prefix@solarized{solarized-}
+
+% --- helper macro ---
+\newcommand\definecolor@solarized{\expandafter\definecolor\expandafter}
+
+% --- color definitions ---
+\definecolor@solarized{\prefix@solarized base03} {RGB}{000, 043, 054}
+\definecolor@solarized{\prefix@solarized base02} {RGB}{007, 054, 066}
+\definecolor@solarized{\prefix@solarized base01} {RGB}{088, 110, 117}
+\definecolor@solarized{\prefix@solarized base00} {RGB}{101, 123, 131}
+\definecolor@solarized{\prefix@solarized base0}  {RGB}{131, 148, 150}
+\definecolor@solarized{\prefix@solarized base1}  {RGB}{147, 161, 161}
+\definecolor@solarized{\prefix@solarized base2}  {RGB}{238, 232, 213}
+\definecolor@solarized{\prefix@solarized base3}  {RGB}{253, 246, 227}
+\definecolor@solarized{\prefix@solarized yellow} {RGB}{181, 137, 000}
+\definecolor@solarized{\prefix@solarized orange} {RGB}{203, 075, 022}
+\definecolor@solarized{\prefix@solarized red}    {RGB}{220, 050, 047}
+\definecolor@solarized{\prefix@solarized magenta}{RGB}{211, 054, 130}
+\definecolor@solarized{\prefix@solarized violet} {RGB}{108, 113, 196}
+\definecolor@solarized{\prefix@solarized blue}   {RGB}{038, 139, 210}
+\definecolor@solarized{\prefix@solarized cyan}   {RGB}{042, 161, 152}
+\definecolor@solarized{\prefix@solarized green}  {RGB}{133, 153, 000}
+
+\endinput

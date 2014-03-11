@@ -1,0 +1,14 @@
+*.DS_store
+*.aux
+*.glo
+*.gls
+*.idx
+*.ilg
+*.ind
+*.log
+*.m
+*.out
+*.tmp
+*.toc
+
+xcolor-solarized.pdf
