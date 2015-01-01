@@ -8,3 +8,12 @@ Built on the xcolor package, the `xcolor-solarized' package defines the 16
 colors of Ethan Schoonover's popular Solarized color palette
 (http://ethanschoonover.com/solarized) for use in documents typeset with
 LaTeX & friends.
+
+## Install
+
+```bash
+$ git clone github.com/albfan/xcolor-solarized.git
+$ cd xcolor-solarized
+$ makepkg -s
+$ sudo pacman -U xcolor-solarized<version>.xz
+```
