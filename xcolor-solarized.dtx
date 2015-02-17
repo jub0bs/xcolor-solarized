@@ -1,0 +1,333 @@
+% \iffalse meta-comment
+
+%
+% Copyright (C) 2015 by Julien Cretel
+%                       <jubobs.tex at gmail.com>
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%
+%     http://www.latex-project.org/lppl.txt
+%
+% and version 1.3 or later is section of all distributions of LaTeX
+% version 2005/12/01 or later.
+%
+% \fi
+%
+% \iffalse
+%<package>\NeedsTeXFormat{LaTeX2e}[2011/06/27]
+%<package>\ProvidesPackage{xcolor-solarized}
+%<package>  [2015/02/17 v0.3 xcolor definitions for Ethan Schoonover's
+%<package>   Solarized theme]
+%
+%<*driver>
+\documentclass[a4paper]{ltxdoc}
+\RecordChanges
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{xcolor-solarized}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{cleveref}
+
+\DeclareUrlCommand\email{\urlstyle{tt}}
+
+\newcommand*{\pkg}[1]{\textsf{#1}}
+\newcommand*{\opt}[1]{\texttt{#1}}
+\newcommand\solarized{\textsf{Solarized}}
+\newcommand\solpkg{\pkg{xcolor-solarized}}
+\newcommand\kvpkg{\pkg{kvoptions}}
+\newcommand\xcolpkg{\pkg{xcolor}}
+
+\begin{document}
+  \DocInput{xcolor-solarized.dtx}
+\end{document}
+%</driver>
+% \fi
+%
+% \CheckSum{92}
+%
+% \CharacterTable
+%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
+%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
+%   Digits        \0\1\2\3\4\5\6\7\8\9
+%   Exclamation   \!     Double quote  \"     Hash (number) \#
+%   Dollar        \$     Percent       \%     Ampersand     \&
+%   Acute accent  \'     Left paren    \(     Right paren   \)
+%   Asterisk      \*     Plus          \+     Comma         \,
+%   Minus         \-     Point         \.     Solidus       \/
+%   Colon         \:     Semicolon     \;     Less than     \<
+%   Equals        \=     Greater than  \>     Question mark \?
+%   Commercial at \@     Left bracket  \[     Backslash     \\
+%   Right bracket \]     Circumflex    \^     Underscore    \_
+%   Grave accent  \`     Left brace    \{     Vertical bar  \|
+%   Right brace   \}     Tilde         \~}
+%
+% \changes{v0.1}{2014/04/24}{Initial release on GitHub}
+% \changes{v0.2}{2015/02/14}{Major refactoring of the code}
+% \changes{v0.3}{2015/02/17}{Submission to CTAN}
+%
+% \GetFileInfo{xcolor-solarized.sty}
+%
+% \title{^^A
+%   The \solpkg{} package^^A
+%   \thanks{^^A
+%     This document corresponds to \solpkg~\fileversion,
+%     dated~\filedate.^^A
+%   }^^A
+%  }
+% \author{Julien Cretel\\ \texttt{jubobs.tex at gmail.com}}
+% \date{\filedate}
+% \thispagestyle{empty}
+% \maketitle
+%
+% \begin{abstract}
+%   Built on top of the \xcolpkg{} package, the \solpkg{} package defines the
+%   sixteen colors of Ethan Schoonover's popular color palette,
+%   \href{http://ethanschoonover.com/solarized}{\solarized}, for use in
+%   documents typeset with \LaTeX{} \& friends.
+% \end{abstract}
+%
+% \tableofcontents\newpage
+%
+%
+% \section{User's guide}
+%
+% \subsection{Installation}
+%
+% \subsubsection{Package dependencies}
+%
+% The \solpkg{} package requires relatively up-to-date versions of the
+% \xcolpkg{} and \kvpkg{} packages, both of which ship with popular \TeX{}
+% distributions. It loads those two packages without any options.
+%
+% \subsubsection{Installing \solpkg{}}
+%
+% Once the package is officially released on
+% \href{http://www.ctan.org}{CTAN},
+% you should be able to install it directly through your package manager.
+% However, if you need to install \solpkg{} manually, you should run
+%^^A
+% \begin{verbatim}
+%   latex xcolor-solarized.ins\end{verbatim}
+%^^A
+% and copy the file called |xcolor-solarized.sty| to a path
+% where \LaTeX{} (or your preferred typesetting engine) can find it.
+% To generate the documentation, run
+%^^A
+% \begin{verbatim}
+%   pdflatex xcolor-solarized.dtx\end{verbatim}
+%^^A%
+% twice.
+%
+% \subsection{Usage}
+%
+% \subsubsection{Loading \texorpdfstring{\solpkg{}}{xcolor-solarized}}
+%
+% Simply write
+%^^A
+% \begin{verbatim}
+%   \usepackage{xcolor-solarized}\end{verbatim}
+%^^A
+% somewhere in your preamble.
+%
+% You may want to load the \xcolpkg{} and \kvpkg{} packages with some
+% options; in that case, make sure those options are passed to those two
+% packages \emph{before} loading the \solpkg{} package.
+%
+% \subsubsection{Package option}
+%
+% The \solpkg{} currently offers only one option:
+%^^A
+% \begin{description}
+%   \item[\opt{prefix}|=|\meta{prefix}]\leavevmode
+%
+%      Defines the sixteen \solarized{} colors with prefix \meta{prefix},
+%      for namespacing purposes; the default prefix is ``|solarized-|''.
+%
+% \end{description}
+%^^A
+% What is the point of this option?
+% Well, the \solarized{} colors must be namespaced in one way or another,
+% because many of their official names, such ``red'', ``green'', etc.\ would
+% conflict with colors defined by the \xcolpkg{} package.
+%
+% For convenience, you may want to use a custom prefix, shorter, perhaps, than
+% the default one. The \opt{prefix} option allows you to do just that.
+% For instance, if you want to use the prefix ``|sol|'', you should load the
+% package like so:
+%^^A
+% \begin{verbatim}
+%   \usepackage[prefix=sol]{xcolor-solarized}\end{verbatim}
+%^^A
+%
+% \subsubsection{Using the \solarized{} colors in your document}
+%
+% \begin{figure}
+%   \solarizedPalette
+%   \caption{The sixteen colors of Ethan Schoonover's \solarized{} palette}
+%   \label{palette}
+% \end{figure}
+%
+% Loading the \solpkg{} package defines those colors at the global scope of
+% your document, using the \xcolpkg{} package; you should refer to the
+% documentation of the latter for more details about how to use colors in
+% your documents.
+%
+% The sixteen colors of the Ethan Schoonover's \solarized{} palette are shown
+% on \cref{palette}; for more details, see the
+% \href{http://ethanschoonover.com/solarized}{official \solarized{} website}.
+% The name under which \solpkg{} defines each \solarized{} color has the form
+% \meta{prefix}\meta{name}, where
+%^^A
+% \begin{itemize}
+%   \item \meta{prefix} corresponds to the value of the prefix set via the
+% package option \opt{prefix}, and
+%   \item \meta{name} is the official name of the color (see \cref{palette}).
+% \end{itemize}
+%^^A
+% For example, by default (if you don't set a custom prefix),
+% the red \solarized{} color will be available in your document
+% under the name ``|solarized-red|''.
+%
+% The \solpkg{} package also defines one convenient user-level command:
+%^^A
+% \begin{description}
+%   \item[\cmd{\solarizedPalette}]\leavevmode
+%
+%      Prints the sixteen colors of the palette,
+%      along with their official names
+% \end{description}
+%^^A
+% This command was used to produce \cref{palette}.
+% Use it as a tool for consulting the \solarized{} palette within your
+% documents during the writing phase, without having to refer to some
+% external resource (e.g.\ the
+% \href{http://ethanschoonover.com/solarized}{official \solarized{} website}).
+%
+% \subsection{Bug reports and feature suggestions}
+%
+% The development version of \solpkg{} is currently hosted on GitHub at
+% \href{https://github.com/Jubobs/xcolor-solarized}
+%   {Jubobs/xcolor-solarized}.
+% If you find an issue in \solpkg{} that this manual does not mention,
+% if you would like to see a feature implemented in the package,
+% or if you can think of ways in which the \solpkg{} documentation could be
+% improved, please open a ticket in the GitHub repository's issue tracker;
+% alternatively, you can send me an email at
+% \email{jubobs.tex@gmail.com}
+%
+% \subsection{Acknowledgments}
+%
+% Thanks to Uwe Kern, author of the \xcolpkg{} package, Heiko Oberdiek, author
+% of the \kvpkg{} package, and Ethan Schoonover, originator of the \solarized{}
+% color palette.
+%
+% \StopEventually{}
+%
+%
+% \section{Implementation}
+%
+% Be aware that, for ``namespacing'', the \solpkg{} package uses the
+% prefix ``|solarized|'' (followed by an |@| character) throughout.
+%
+% \subsection{Required packages}
+%
+% \solpkg{} requires the following two packages:
+%    \begin{macrocode}
+\RequirePackage{xcolor}[2007/01/21]
+\RequirePackage{kvoptions}[2011/06/30]
+%    \end{macrocode}
+%
+% \subsection{Package options}
+%
+% First, we set up \kvpkg{}.
+%    \begin{macrocode}
+\SetupKeyvalOptions{
+  family=solarized,
+  prefix=solarized@
+}
+%    \end{macrocode}
+% Then, we declare the \opt{prefix} key-value option, with default value
+% ``|solarized-|'', and we throw an error if any other option is passed to the
+% \solpkg{} package.
+%    \begin{macrocode}
+\DeclareStringOption[solarized-]{prefix}
+\DeclareDefaultOption{%
+  \OptionNotUsed
+  \PackageError{xcolor-solarized}{Unknown `\CurrentOption' option}
+}
+\ProcessKeyvalOptions*
+%    \end{macrocode}
+%
+% \subsection{Colour definitions}
+%
+% \begin{macro}{\solarized@definecolor}
+%   Here is a convenient internal macro for defining colors with a custom
+%   prefix.
+%    \begin{macrocode}
+\newcommand\solarized@definecolor{\expandafter\definecolor\expandafter}
+%    \end{macrocode}
+% \end{macro}
+% We now define the sixteen \solarized{} colors.
+%    \begin{macrocode}
+\solarized@definecolor{\solarized@prefix base03} {RGB}{000, 043, 054}
+\solarized@definecolor{\solarized@prefix base02} {RGB}{007, 054, 066}
+\solarized@definecolor{\solarized@prefix base01} {RGB}{088, 110, 117}
+\solarized@definecolor{\solarized@prefix base00} {RGB}{101, 123, 131}
+\solarized@definecolor{\solarized@prefix base0}  {RGB}{131, 148, 150}
+\solarized@definecolor{\solarized@prefix base1}  {RGB}{147, 161, 161}
+\solarized@definecolor{\solarized@prefix base2}  {RGB}{238, 232, 213}
+\solarized@definecolor{\solarized@prefix base3}  {RGB}{253, 246, 227}
+\solarized@definecolor{\solarized@prefix yellow} {RGB}{181, 137, 000}
+\solarized@definecolor{\solarized@prefix orange} {RGB}{203, 075, 022}
+\solarized@definecolor{\solarized@prefix red}    {RGB}{220, 050, 047}
+\solarized@definecolor{\solarized@prefix magenta}{RGB}{211, 054, 130}
+\solarized@definecolor{\solarized@prefix violet} {RGB}{108, 113, 196}
+\solarized@definecolor{\solarized@prefix blue}   {RGB}{038, 139, 210}
+\solarized@definecolor{\solarized@prefix cyan}   {RGB}{042, 161, 152}
+\solarized@definecolor{\solarized@prefix green}  {RGB}{133, 153, 000}
+%    \end{macrocode}
+%
+% \subsection{User-level macro}
+%
+% \begin{macro}{\solarizedPalette}
+% Finally, here is a user-level macro for printing the palette in a document.
+% It takes one optional argument, which corresponds to
+% both the length of the of the colored squares' sides
+% and the vertical space between the two rows of squares (|3em|, by default).
+%    \begin{macrocode}
+\newcommand\solarizedPalette[1][3em]{%
+  \newcommand\solarized@square{\rule{#1}{#1}}
+  \noindent
+  \begin{tabular}{cccc cccc}
+    \textcolor{solarized-base03} \solarized@square &
+    \textcolor{solarized-base02} \solarized@square &
+    \textcolor{solarized-base01} \solarized@square &
+    \textcolor{solarized-base00} \solarized@square &
+    \textcolor{solarized-base0}  \solarized@square &
+    \textcolor{solarized-base1}  \solarized@square &
+    \textcolor{solarized-base2}  \solarized@square &
+    \textcolor{solarized-base3}  \solarized@square \\
+    base03 & base02 & base01 & base00 &
+    base0  & base1  & base2  & base3               \\[#1]
+    \textcolor{solarized-yellow} \solarized@square &
+    \textcolor{solarized-orange} \solarized@square &
+    \textcolor{solarized-red}    \solarized@square &
+    \textcolor{solarized-magenta}\solarized@square &
+    \textcolor{solarized-violet} \solarized@square &
+    \textcolor{solarized-blue}   \solarized@square &
+    \textcolor{solarized-cyan}   \solarized@square &
+    \textcolor{solarized-green}  \solarized@square \\
+    yellow & orange & red    & magenta &
+    violet & blue   & cyan   & green
+  \end{tabular}
+}
+%    \end{macrocode}
+% \end{macro}
+%
+% \Finale
+\endinput
