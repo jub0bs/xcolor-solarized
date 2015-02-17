@@ -28,6 +28,6 @@ clean:
 	$(RM) *.aux *.fdb_latexmk *.fls *.glo *.log *.out *.toc
 
 cleanall: clean
-	$(RM) $(PKGNAME).pdf $(PKGNAME).zip
+	$(RM) $(PKGNAME).pdf $(PKGNAME).zip $(PKGNAME).tar.gz
 
 .PHONY: all doc dist clean cleanall
