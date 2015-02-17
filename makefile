@@ -20,14 +20,10 @@ $(PKGNAME).sty: $(PKGNAME).ins \
                 $(PKGNAME).dtx
 	latex $(PKGNAME).ins
 
-dist: $(PACKAGE)
-	$(RM) $(PKGNAME).zip
-	zip $(PKGNAME).zip $(PACKAGE)
-
 clean:
 	$(RM) *.aux *.fdb_latexmk *.fls *.glo *.log *.out *.toc
 
 cleanall: clean
-	$(RM) $(PKGNAME).pdf $(PKGNAME).zip $(PKGNAME).tar.gz
+	$(RM) $(PKGNAME).pdf *.tar.gz
 
 .PHONY: all doc dist clean cleanall

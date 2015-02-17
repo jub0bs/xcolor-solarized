@@ -1,18 +1,12 @@
 *.aux
-*.fls
 *.fdb_latexmk
+*.fls
 *.glo
-*.gls
-*.idx
-*.ilg
-*.ind
 *.log
-*.makefile.swp
 *.out
+*.swo
 *.swp
 *.tar.gz
-*.tmp
 *.toc
-*.zip
 
 xcolor-solarized.pdf
