@@ -48,7 +48,7 @@
 %</driver>
 % \fi
 %
-% \CheckSum{92}
+% \CheckSum{77}
 %
 % \CharacterTable
 %  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
@@ -269,27 +269,28 @@
 %   Here is a convenient internal macro for defining colors with a custom
 %   prefix.
 %    \begin{macrocode}
-\newcommand\solarized@definecolor{\expandafter\definecolor\expandafter}
+\newcommand\solarized@definecolor[2]
+  {\expandafter\definecolor\expandafter{\solarized@prefix #1}{RGB}{#2}}
 %    \end{macrocode}
 % \end{macro}
 % We now define the sixteen \solarized{} colors.
 %    \begin{macrocode}
-\solarized@definecolor{\solarized@prefix base03} {RGB}{000, 043, 054}
-\solarized@definecolor{\solarized@prefix base02} {RGB}{007, 054, 066}
-\solarized@definecolor{\solarized@prefix base01} {RGB}{088, 110, 117}
-\solarized@definecolor{\solarized@prefix base00} {RGB}{101, 123, 131}
-\solarized@definecolor{\solarized@prefix base0}  {RGB}{131, 148, 150}
-\solarized@definecolor{\solarized@prefix base1}  {RGB}{147, 161, 161}
-\solarized@definecolor{\solarized@prefix base2}  {RGB}{238, 232, 213}
-\solarized@definecolor{\solarized@prefix base3}  {RGB}{253, 246, 227}
-\solarized@definecolor{\solarized@prefix yellow} {RGB}{181, 137, 000}
-\solarized@definecolor{\solarized@prefix orange} {RGB}{203, 075, 022}
-\solarized@definecolor{\solarized@prefix red}    {RGB}{220, 050, 047}
-\solarized@definecolor{\solarized@prefix magenta}{RGB}{211, 054, 130}
-\solarized@definecolor{\solarized@prefix violet} {RGB}{108, 113, 196}
-\solarized@definecolor{\solarized@prefix blue}   {RGB}{038, 139, 210}
-\solarized@definecolor{\solarized@prefix cyan}   {RGB}{042, 161, 152}
-\solarized@definecolor{\solarized@prefix green}  {RGB}{133, 153, 000}
+\solarized@definecolor{base03} {000, 043, 054}
+\solarized@definecolor{base02} {007, 054, 066}
+\solarized@definecolor{base01} {088, 110, 117}
+\solarized@definecolor{base00} {101, 123, 131}
+\solarized@definecolor{base0}  {131, 148, 150}
+\solarized@definecolor{base1}  {147, 161, 161}
+\solarized@definecolor{base2}  {238, 232, 213}
+\solarized@definecolor{base3}  {253, 246, 227}
+\solarized@definecolor{yellow} {181, 137, 000}
+\solarized@definecolor{orange} {203, 075, 022}
+\solarized@definecolor{red}    {220, 050, 047}
+\solarized@definecolor{magenta}{211, 054, 130}
+\solarized@definecolor{violet} {108, 113, 196}
+\solarized@definecolor{blue}   {038, 139, 210}
+\solarized@definecolor{cyan}   {042, 161, 152}
+\solarized@definecolor{green}  {133, 153, 000}
 %    \end{macrocode}
 %
 % \subsection{User-level macro}
