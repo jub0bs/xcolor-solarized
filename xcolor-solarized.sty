@@ -64,26 +64,29 @@
 \solarized@definecolor{green}  {133, 153, 000}
 \newcommand\solarizedPalette[1][3em]{%
   \newcommand\solarized@square{\rule{#1}{#1}}
+  \newcommand\solarized@showcolor[1]{%
+    \textcolor{##1}{\solarized@square}%
+  }
   \noindent
   \begin{tabular}{cccc cccc}
-    \textcolor{solarized-base03} \solarized@square &
-    \textcolor{solarized-base02} \solarized@square &
-    \textcolor{solarized-base01} \solarized@square &
-    \textcolor{solarized-base00} \solarized@square &
-    \textcolor{solarized-base0}  \solarized@square &
-    \textcolor{solarized-base1}  \solarized@square &
-    \textcolor{solarized-base2}  \solarized@square &
-    \textcolor{solarized-base3}  \solarized@square \\
+    \solarized@showcolor{solarized-base03} &
+    \solarized@showcolor{solarized-base02} &
+    \solarized@showcolor{solarized-base01} &
+    \solarized@showcolor{solarized-base00} &
+    \solarized@showcolor{solarized-base0}  &
+    \solarized@showcolor{solarized-base1}  &
+    \solarized@showcolor{solarized-base2}  &
+    \solarized@showcolor{solarized-base3}  \\
     base03 & base02 & base01 & base00 &
-    base0  & base1  & base2  & base3               \\[#1]
-    \textcolor{solarized-yellow} \solarized@square &
-    \textcolor{solarized-orange} \solarized@square &
-    \textcolor{solarized-red}    \solarized@square &
-    \textcolor{solarized-magenta}\solarized@square &
-    \textcolor{solarized-violet} \solarized@square &
-    \textcolor{solarized-blue}   \solarized@square &
-    \textcolor{solarized-cyan}   \solarized@square &
-    \textcolor{solarized-green}  \solarized@square \\
+    base0  & base1  & base2  & base3       \\[#1]
+    \solarized@showcolor{solarized-yellow} &
+    \solarized@showcolor{solarized-orange} &
+    \solarized@showcolor{solarized-red}    &
+    \solarized@showcolor{solarized-magenta}&
+    \solarized@showcolor{solarized-violet} &
+    \solarized@showcolor{solarized-blue}   &
+    \solarized@showcolor{solarized-cyan}   &
+    \solarized@showcolor{solarized-green}  \\
     yellow & orange & red    & magenta &
     violet & blue   & cyan   & green
   \end{tabular}
