@@ -19,7 +19,7 @@
 % \iffalse
 %<package>\NeedsTeXFormat{LaTeX2e}[2011/06/27]
 %<package>\ProvidesPackage{xcolor-solarized}
-%<package>  [2015/02/17 v0.3 xcolor definitions for Ethan Schoonover's
+%<package>  [2015/08/13 v0.4 xcolor definitions for Ethan Schoonover's
 %<package>   Solarized theme]
 %
 %<*driver>
@@ -48,7 +48,7 @@
 %</driver>
 % \fi
 %
-% \CheckSum{65}
+% \CheckSum{66}
 %
 % \CharacterTable
 %  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
@@ -304,28 +304,28 @@
 \newcommand\solarizedPalette[1][3em]{%
   \newcommand\solarized@square{\rule{#1}{#1}}
   \newcommand\solarized@showcolor[1]{%
-    \textcolor{##1}{\solarized@square}%
+    \textcolor{\solarized@prefix ##1}{\solarized@square}%
   }
   \noindent
   \begin{tabular}{cccc cccc}
-    \solarized@showcolor{solarized-base03} &
-    \solarized@showcolor{solarized-base02} &
-    \solarized@showcolor{solarized-base01} &
-    \solarized@showcolor{solarized-base00} &
-    \solarized@showcolor{solarized-base0}  &
-    \solarized@showcolor{solarized-base1}  &
-    \solarized@showcolor{solarized-base2}  &
-    \solarized@showcolor{solarized-base3}  \\
+    \solarized@showcolor{base03} &
+    \solarized@showcolor{base02} &
+    \solarized@showcolor{base01} &
+    \solarized@showcolor{base00} &
+    \solarized@showcolor{base0}  &
+    \solarized@showcolor{base1}  &
+    \solarized@showcolor{base2}  &
+    \solarized@showcolor{base3}  \\
     base03 & base02 & base01 & base00 &
     base0  & base1  & base2  & base3       \\[#1]
-    \solarized@showcolor{solarized-yellow} &
-    \solarized@showcolor{solarized-orange} &
-    \solarized@showcolor{solarized-red}    &
-    \solarized@showcolor{solarized-magenta}&
-    \solarized@showcolor{solarized-violet} &
-    \solarized@showcolor{solarized-blue}   &
-    \solarized@showcolor{solarized-cyan}   &
-    \solarized@showcolor{solarized-green}  \\
+    \solarized@showcolor{yellow} &
+    \solarized@showcolor{orange} &
+    \solarized@showcolor{red}    &
+    \solarized@showcolor{magenta}&
+    \solarized@showcolor{violet} &
+    \solarized@showcolor{blue}   &
+    \solarized@showcolor{cyan}   &
+    \solarized@showcolor{green}  \\
     yellow & orange & red    & magenta &
     violet & blue   & cyan   & green
   \end{tabular}
