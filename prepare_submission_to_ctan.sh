@@ -1,6 +1,7 @@
-PKGNAME="xcolor-solarized"
-if [ -f ${PKGNAME}.tar.gz ]; then
-    rm ${PKGNAME}.tar.gz
-fi
-make all clean
-ctanify ${PKGNAME}.ins ${PKGNAME}.pdf README.md makefile
+#!/bin/sh
+[ $# -eq 1 ] || exit 1
+
+PKGNAME="$1"
+rm -f ${PKGNAME}.tar.gz
+make all clean && \
+  ctanify ${PKGNAME}.ins ${PKGNAME}.pdf README makefile
